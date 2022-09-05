@@ -5,6 +5,7 @@ import AboutView from '../views/AboutView.vue'
 import BangladeshFlag from '../views/BangladeshFlag.vue'
 import TableView from '../views/TableView.vue'
 import TransformView from '../views/TransformView.vue'
+import FlexView from '../views/FlexView.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/transform',
     name: 'transform',
     component: TransformView
+  },
+  {
+    path: '/flex',
+    name: 'flex',
+    component: FlexView
   }
 ]
 
