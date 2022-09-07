@@ -10,7 +10,7 @@
 
 
     <div class="box">
-      <img
+      <img class="image-class"
         src="https://cdn.pixabay.com/photo/2015/08/13/20/06/flower-887443_960_720.jpg"
         alt="flower image"
       />
@@ -49,12 +49,12 @@ export default {
   justify-content: center;
   padding-top: 5%;
 }
-img {
+.image-class {
   width: 35%;
   height: auto;
   transition: all 0.8s;
 }
-:hover img {
+:hover .image-class {
   transform: scale(1.2);
 }
 </style>

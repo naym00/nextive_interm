@@ -1,12 +1,12 @@
 <template>
   <div class="about">
-    <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-      <li>6</li>
+    <ul class="ul-div">
+      <li class="li-class">1</li>
+      <li class="li-class">2</li>
+      <li class="li-class">3</li>
+      <li class="li-class">4</li>
+      <li class="li-class">5</li>
+      <li class="li-class">6</li>
     </ul>
     <HelloWorld></HelloWorld>
   </div>
@@ -19,14 +19,14 @@ export default {
 </script>
 
 <style>
-ul {
+.ul-div {
   display: flex;
   background: #f3e5f5;
   padding: 0px;
   margin: 0px;
 }
 
-li {
+.li-class {
   background: rgb(230, 226, 14);
   color: black;
   font-size: 30px;

@@ -1,11 +1,26 @@
 <template>
   <div class="about">
-
     <div>
-        <button v-on:click="styleChange($event)" value="row" type="button">row</button>
-        <button v-on:click="styleChange($event)" value="row-reverse" type="button">row-reverse</button>
-        <button v-on:click="styleChange($event)" value="column" type="button">column</button>
-        <button v-on:click="styleChange($event)" value="column-reverse" type="button">column-reverse</button>
+      <button v-on:click="styleChange($event)" value="row" type="button">
+        row
+      </button>
+      <button
+        v-on:click="styleChange($event)"
+        value="row-reverse"
+        type="button"
+      >
+        row-reverse
+      </button>
+      <button v-on:click="styleChange($event)" value="column" type="button">
+        column
+      </button>
+      <button
+        v-on:click="styleChange($event)"
+        value="column-reverse"
+        type="button"
+      >
+        column-reverse
+      </button>
     </div>
     <ul :class="action">
       <li>1</li>
@@ -13,7 +28,7 @@
       <li>3</li>
       <li>4</li>
       <li>5</li>
-    </ul> 
+    </ul>
     <HelloWorld></HelloWorld>
   </div>
 </template>
@@ -21,47 +36,44 @@
 <script>
 export default {
   name: "FlexView",
-  data(){
+  data() {
     return {
-        action: '',
-    }
+      action: "",
+    };
   },
-  methods:{
-    styleChange(e){
-        this.action = e.target.value;
-    }
-  }
+  methods: {
+    styleChange(e) {
+      this.action = e.target.value;
+    },
+  },
 };
 </script>
 
-<style>
-.row {
-  display: flex;
-  flex-direction: row;
-  padding: 0px;
-  margin: 0px;
+<style lang="scss">
+  
+$flex-directions: row, row-reverse, column, column-reverse;
+$properties: display, padding, margin;
+@mixin flex-properties() {
+  $map-ob: ("display": flex, "padding": 0px, "margin": 0px);
+  @each $key, $val in $map-ob {
+    #{$key}: $val;
+  }
+}
+@mixin flex-direction($direction: row) {
+  flex-direction: $direction;
 }
 
-.row-reverse {
-  display: flex;
-  flex-direction: row-reverse;
-  padding: 0px;
-  margin: 0px;
+@each $direction in $flex-directions {
+  
+  .#{$direction} {
+    @include flex-properties();
+    @include flex-direction($direction);
+  }
 }
+/*
 
-.column {
-  display: flex;
-  flex-direction: column;
-  padding: 0px;
-  margin: 0px;
-}
 
-.column-reverse {
-  display: flex;
-  flex-direction: column-reverse;
-  padding: 0px;
-  margin: 0px;
-}
+
 
 .row li {
   color: black;
@@ -98,4 +110,5 @@ export default {
   padding: 2% 5%;
   list-style-type: none;
 }
+*/
 </style>
